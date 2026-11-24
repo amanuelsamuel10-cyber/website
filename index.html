@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="am" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>የዲላ ከተማ ፈጠራና ቴክኖሎጂ መምሪያ (DCITD)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Noto Sans Ethiopic & Inter Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+Ethiopic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans Ethiopic"', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.25), transparent 50%),
+                        linear-gradient(135deg, #022c22 0%, #064e3b 50%, #0f172a 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-600 selection:text-white">
+
+    <!-- TOP CONTACT BAR -->
+    <div class="bg-slate-950 text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6">
+                <span class="flex items-center gap-1.5">
+                    <i class="fas fa-phone-alt text-accent-500"></i>
+                    <span dir="ltr">+251 948 497 076</span>
+                </span>
+                <span class="flex items-center gap-1.5">
+                    <i class="fas fa-envelope text-accent-500"></i>
+                    <span>dillacity@gmail.com</span>
+                </span>
+                <span class="hidden md:flex items-center gap-1.5">
+                    <i class="fas fa-map-marker-alt text-accent-500"></i>
+                    <span data-am="ዲላ ከተማ፣ ደቡብ ኢትዮጵያ ክልል" data-gd="Magaalaa Diillaa, Naannoo Itoophiyaa Kibbaa" data-en="Dilla City, South Ethiopia Region">ዲላ ከተማ፣ ደቡብ ኢትዮጵያ ክልል</span>
+                </span>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://t.me/dtasit2024" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition flex items-center gap-1 font-medium">
+                    <i class="fab fa-telegram text-sky-400"></i>
+                    <span>@dtasit2024</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION BAR -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Brand & Logo (7253_2.png) -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden border border-slate-200 bg-white flex items-center justify-center shadow-sm flex-shrink-0">
+                        <img src="7253_2.png" alt="DCITD Logo" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/120x120/047857/ffffff?text=DCITD';">
+                    </div>
+                    <div>
+                        <span class="block text-sm sm:text-base font-extrabold text-brand-800 tracking-tight leading-tight" data-am="የዲላ ከተማ ፈጠራና ቴክኖሎጂ መምሪያ" data-gd="Bulchiinsa Magaalaa Diillaa Damee Kalaqaa fi Teeknooloojii" data-en="Dilla City Innovation & Technology Dept.">የዲላ ከተማ ፈጠራና ቴክኖሎጂ መምሪያ</span>
+                        <span class="block text-[11px] font-semibold text-slate-500">DCITD • Dilla City Administration</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-6 lg:space-x-7 space-x-reverse text-sm font-semibold">
+                    <a href="#home" class="text-brand-700 hover:text-brand-600 transition" data-am="መነሻ" data-gd="Ka'uma" data-en="Home">መነሻ</a>
+                    <a href="#executive-message" class="text-slate-600 hover:text-brand-700 transition" data-am="የኃላፊው መልዕክት" data-gd="Ergaa Hogganaa" data-en="Executive">የኃላፊው መልዕክት</a>
+                    <a href="#services" class="text-slate-600 hover:text-brand-700 transition" data-am="አገልግሎቶች" data-gd="Tajaajila" data-en="Services">አገልግሎቶች</a>
+                    <a href="#news" class="text-slate-600 hover:text-brand-700 transition" data-am="ዜናዎች" data-gd="Oduu" data-en="News">ዜናዎች</a>
+                    <a href="#staff" class="text-slate-600 hover:text-brand-700 transition" data-am="አመራሮች" data-gd="Hoggantoota" data-en="Leadership">አመራሮች</a>
+                    <a href="#contact" class="text-slate-600 hover:text-brand-700 transition" data-am="ያግኙን" data-gd="Nu Quunnamaa" data-en="Contact">ያግኙን</a>
+                </div>
+
+                <!-- 3-Language Switcher Dropdown -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="relative flex items-center bg-gradient-to-r from-amber-400 to-accent-500 text-slate-950 font-extrabold px-3 py-1.5 rounded-xl text-xs shadow-md">
+                        <i class="fas fa-globe mr-1.5"></i>
+                        <select id="languageSelector" onchange="changeLanguage(this.value)" aria-label="Select Language" class="bg-transparent font-extrabold text-slate-950 focus:outline-none cursor-pointer">
+                            <option value="am" class="bg-white text-slate-900">አማርኛ (AM)</option>
+                            <option value="gd" class="bg-white text-slate-900">Gedeuffa (ጌዴኦኛ)</option>
+                            <option value="en" class="bg-white text-slate-900">English (EN)</option>
+                        </select>
+                    </div>
+                    <button id="menu-btn" aria-label="Menu" class="lg:hidden text-slate-700 p-2 rounded-xl hover:bg-slate-100 transition">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 pt-4 pb-6 space-y-3 shadow-xl">
+            <a href="#home" class="block py-2 text-brand-700 font-bold" data-am="መነሻ" data-gd="Ka'uma" data-en="Home">መነሻ</a>
+            <a href="#executive-message" class="block py-2 text-slate-700 hover:text-brand-700 font-medium" data-am="የኃላፊው መልዕክት" data-gd="Ergaa Hogganaa" data-en="Executive">የኃላፊው መልዕክት</a>
+            <a href="#services" class="block py-2 text-slate-700 hover:text-brand-700 font-medium" data-am="አገልግሎቶች" data-gd="Tajaajila" data-en="Services">አገልግሎቶች</a>
+            <a href="#news" class="block py-2 text-slate-700 hover:text-brand-700 font-medium" data-am="ዜናዎች" data-gd="Oduu" data-en="News">ዜናዎች</a>
+            <a href="#staff" class="block py-2 text-slate-700 hover:text-brand-700 font-medium" data-am="አመራሮች" data-gd="Hoggantoota" data-en="Leadership">አመራሮች</a>
+            <a href="#contact" class="block py-2 text-slate-700 hover:text-brand-700 font-medium" data-am="ያግኙን" data-gd="Nu Quunnamaa" data-en="Contact">ያግኙን</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION WITH AUTOMATED IMAGE SLIDER (6470.jpg, 7265.jpg, 7262.jpg) -->
+    <header id="home" class="relative hero-gradient text-white py-16 sm:py-24 px-4 overflow-hidden border-b border-brand-900">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-6 space-y-6 text-center lg:text-right">
+                <div class="inline-flex items-center gap-2 bg-brand-900/80 border border-brand-500/30 text-emerald-300 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-wider backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+                    <span data-am="የዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ" data-gd="Bulchiinsa Magaalaa Diillaa Damee Kalaqaa fi Teeknooloojii" data-en="Dilla City Innovation & Technology Department">የዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-black leading-tight tracking-tight text-white" data-am="ለዲላ ከተማ ማህበረሰብ ዘመናዊ እና ዲጂታል አገልግሎት" data-gd="Hawaasa Magaalaa Diillaatiif Tajaajila Ammayyaa fi Dijitaalaa" data-en="Modern Digital Services for Dilla City">
+                    ለዲላ ከተማ ማህበረሰብ ዘመናዊ እና ዲጂታል አገልግሎት
+                </h1>
+                <p class="text-slate-200 text-base sm:text-lg leading-relaxed font-light max-w-2xl mx-auto lg:mr-0" data-am="ተቋማዊ አሰራርን በዲጂታል ቴክኖሎጂ ማዘመን፣ የስልጠና እና የአቅም ግንባታ ስራዎችን ማስፋፋት እና ቀልጣፋ የህዝብ አገልግሎት መስጠት።" data-gd="Hojii dhaabbilee teeknooloojii dijitaalaatiin ammayyeessuu, leenjii fi ijaarsa dandeettii babal'isuu fi tajaajila uummataa si'ataa kennuu." data-en="Modernizing municipal operations through ICT infrastructure and technical skill capacity building.">
+                    ተቋማዊ አሰራርን በዲጂታል ቴክኖሎጂ ማዘመን፣ የስልጠና እና የአቅም ግንባታ ስራዎችን ማስፋፋት እና ቀልጣፋ የህዝብ አገልግሎት መስጠት።
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#services" class="bg-accent-500 hover:bg-accent-600 text-slate-950 font-extrabold px-7 py-3.5 rounded-xl shadow-lg transition flex items-center gap-2 text-sm">
+                        <span data-am="አገልግሎቶችን ይመልከቱ" data-gd="Tajaajila Keenya Ilaalaa" data-en="Our Services">አገልግሎቶችን ይመልከቱ</span>
+                        <i class="fas fa-arrow-left text-xs"></i>
+                    </a>
+                    <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-7 py-3.5 rounded-xl backdrop-blur-sm transition text-sm" data-am="አድራሻና ስልክ" data-gd="Teessoo fi Bilbila" data-en="Contact Details">
+                        አድራሻና ስልክ
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image Carousel -->
+            <div class="lg:col-span-6">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/15 bg-slate-900">
+                    <div id="heroSlider" class="flex transition-transform duration-700 ease-out">
+                        <!-- Slide 1: 6470.jpg -->
+                        <div class="min-w-full relative h-72 sm:h-96">
+                            <img src="6470.jpg" alt="DCITD Training" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent flex items-end p-6">
+                                <div>
+                                    <span class="bg-brand-600 text-white text-[11px] font-bold px-3 py-1 rounded-full">DCITD</span>
+                                    <h3 class="text-lg sm:text-xl font-bold text-white mt-2" data-am="የዲጂታል ክህሎትና ቴክኖሎጂ ስልጠና" data-gd="Leenjii Dandeettii Dijitaalaa fi Teeknooloojii" data-en="Digital Skills & Technology Training">የዲጂታል ክህሎትና ቴክኖሎጂ ስልጠና</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2: 7265.jpg -->
+                        <div class="min-w-full relative h-72 sm:h-96">
+                            <img src="7265.jpg" alt="DCITD Infrastructure" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent flex items-end p-6">
+                                <div>
+                                    <span class="bg-accent-500 text-slate-950 text-[11px] font-bold px-3 py-1 rounded-full">ICT Network</span>
+                                    <h3 class="text-lg sm:text-xl font-bold text-white mt-2" data-am="የከተማው የአይቲ መሠረተ ልማት" data-gd="Bu'uuraalee Misoomaa IT Magaalaa" data-en="Municipal IT Infrastructure">የከተማው የአይቲ መሠረተ ልማት</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3: 7262.jpg -->
+                        <div class="min-w-full relative h-72 sm:h-96">
+                            <img src="7262.jpg" alt="DCITD Innovation" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent flex items-end p-6">
+                                <div>
+                                    <span class="bg-brand-600 text-white text-[11px] font-bold px-3 py-1 rounded-full">Innovation</span>
+                                    <h3 class="text-lg sm:text-xl font-bold text-white mt-2" data-am="ዘመናዊ የመንግስት አገልግሎት አሰጣጥ" data-gd="Kenniinsa Tajaajila Mootummaa Ammayyaa" data-en="Smart Public Service Delivery">ዘመናዊ የመንግስት አገልግሎት አሰጣጥ</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Controls -->
+                    <button onclick="prevSlide()" aria-label="Previous" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-9 h-9 rounded-full flex items-center justify-center transition">
+                        <i class="fas fa-chevron-left text-xs"></i>
+                    </button>
+                    <button onclick="nextSlide()" aria-label="Next" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-9 h-9 rounded-full flex items-center justify-center transition">
+                        <i class="fas fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- EXECUTIVE MESSAGE SECTION (1282.jpg) -->
+    <section id="executive-message" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-slate-50 rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-4 flex flex-col items-center text-center">
+                    <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-3xl overflow-hidden border-4 border-brand-600 shadow-xl bg-slate-200">
+                        <img src="1282.jpg" alt="ወ/ሮ ፀኃይ ቦጋሌ" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x400/047857/ffffff?text=Tsehay+Bogale'">
+                    </div>
+                    <span class="mt-4 bg-brand-700 text-white text-xs font-bold px-4 py-1 rounded-full" data-am="የመምሪያው ኃላፊ" data-gd="Hogganaa Damee" data-en="Department Head">የመምሪያው ኃላፊ</span>
+                </div>
+                <div class="lg:col-span-8 space-y-5">
+                    <div class="flex items-center gap-3 text-slate-700 font-bold text-sm">
+                        <i class="fas fa-quote-right text-accent-500 text-2xl"></i>
+                        <span data-am="የመምሪያው ኃላፊ መልዕክት" data-gd="Ergaa Hogganaa Damee" data-en="Executive Message">የመምሪያው ኃላፊ መልዕክት</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-snug" data-am="«ቴክኖሎጂን እና ፈጠራን በመጠቀም ከተማችንን ወደ ላቀ ደረጃ እናሸጋግራለን!»" data-gd="«Teeknooloojii fi kalaqa fayyadamuun magaalaa keenya sadarkaa ol'aanaatti ceesifna!»" data-en="“Transforming Dilla into a digitally empowered smart city!”">
+                        «ቴክኖሎጂን እና ፈጠራን በመጠቀም ከተማችንን ወደ ላቀ ደረጃ እናሸጋግራለን!»
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base" data-am="እንኳን ወደ ዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ በሰላም መጡ። መምሪያችን በከተማችን የሚገኙ የመንግስት ተቋማትን አሰራር በዲጂታል ቴክኖሎጂ ለማዘመን፣ የኢንፎርሜሽን ቴክኖሎጂ መሠረተ ልማቶችን ለማስፋፋት እና ለወጣቶችና ባለሙያዎች የቴክኖሎጂ ስልጠናዎችን በመስጠት ቀልጣፋና ግልጽ የህዝብ አገልግሎት ለማረጋገጥ በቁርጠኝነት እየሰራ ይገኛል።" data-gd="Baga gara Bulchiinsa Magaalaa Diillaa Damee Kalaqaa fi Teeknooloojiitti nagaan dhuftan. Dameen keenya hojii dhaabbilee mootummaa magaalaa keenyaa teeknooloojii dijitaalaatiin ammayyeessuuf, bu'uuraalee misoomaa teeknooloojii babal'isuu fi dargaggootaa fi ogeeyyiif leenjii kennuun tajaajila uummataa si'ataa fi ifa ta'e mirkaneessuuf kutannoodhaan hojjechaa jira." data-en="Welcome to the Dilla City Administration Innovation & Technology Department. We are dedicated to modernizing public sector operations through digital infrastructure, expanding ICT networks, and empowering youth and professionals with modern technical skills.">
+                        እንኳን ወደ ዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ በሰላም መጡ። መምሪያችን በከተማችን የሚገኙ የመንግስት ተቋማትን አሰራር በዲጂታል ቴክኖሎጂ ለማዘመን፣ የኢንፎርሜሽን ቴክኖሎጂ መሠረተ ልማቶችን ለማስፋፋት እና ለወጣቶችና ባለሙያዎች የቴክኖሎጂ ስልጠናዎችን በመስጠት ቀልጣፋና ግልጽ የህዝብ አገልግሎት ለማረጋገጥ በቁርጠኝነት እየሰራ ይገኛል።
+                    </p>
+                    <div class="pt-3 border-t border-slate-200">
+                        <p class="font-extrabold text-slate-900 text-base" data-am="ወ/ሮ ፀኃይ ቦጋሌ" data-gd="Addee Tsahaay Bogaalee" data-en="Mrs. Tsehay Bogale">ወ/ሮ ፀኃይ ቦጋሌ</p>
+                        <p class="text-xs text-slate-500 mt-0.5" data-am="የዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ ኃላፊ" data-gd="Hogganaa Damee Kalaqaa fi Teeknooloojii Magaalaa Diillaa" data-en="Head of Dilla City Innovation & Technology Department">የዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ ኃላፊ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 px-4 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="text-brand-700 font-bold text-xs uppercase tracking-wider bg-brand-100 px-3 py-1 rounded-full" data-am="የምንሰጣቸው አገልግሎቶች" data-gd="Tajaajila Nuti Kenninu" data-en="Core Services">የምንሰጣቸው አገልግሎቶች</span>
+                <h2 class="text-3xl font-extrabold text-slate-900" data-am="ዋና ዋና የቴክኖሎጂና ስልጠና አገልግሎቶች" data-gd="Tajaajila Ijoo Teeknooloojii fi Leenjii" data-en="Primary ICT & Training Services">ዋና ዋና የቴክኖሎጂና ስልጠና አገልግሎቶች</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-700 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-am="የቴክኖሎጂ ስልጠና እና የአቅም ግንባታ" data-gd="Leenjii Teeknooloojii fi Ijaarsa Dandeettii" data-en="ICT Training & Capacity Building">የቴክኖሎጂ ስልጠና እና የአቅም ግንባታ</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-am="ለመንግስት ሰራተኞች እና ለከተማዋ ወጣቶች መሰረታዊ የኮምፒውተር ክህሎት፣ የሶፍትዌር አጠቃቀም እና ዲጂታል እውቀት ስልጠናዎችን መስጠት።" data-gd="Hojjettoota mootummaa fi dargaggoota magaalaatiif leenjii dandeettii kompiitaraa bu'uuraa, itti fayyadama sooftiweerii fi beekumsa dijitaalaa kennuu." data-en="Providing practical digital literacy, software utilization, and technical skills workshops for civil servants and youth.">
+                        ለመንግስት ሰራተኞች እና ለከተማዋ ወጣቶች መሰረታዊ የኮምፒውተር ክህሎት፣ የሶፍትዌር አጠቃቀም እና ዲጂታል እውቀት ስልጠናዎችን መስጠት።
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-amber-100 text-accent-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-am="የመንግስት ተቋማት የአይቲ ድጋፍ እና ኔትወርክ" data-gd="Deeggarsa IT fi Neetworkii Dhaabbilee Mootummaa" data-en="Institutional IT Support & Networking">የመንግስት ተቋማት የአይቲ ድጋፍ እና ኔትወርክ</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed" data-am="በከተማዋ አስተዳደር ስር ላሉ ተቋማት የኔትወርክ ዝርጋታ፣ የኮምፒውተር ጥገና እና የዲጂታል አሰራር ቴክኒካል ድጋፍ ማድረግ።" data-gd="Dhaabbilee bulchiinsa magaalaa jala jiraniif diriirsa neetworkii, suphaa kompiitaraa fi deeggarsa teeknikaa hojii dijitaalaa kennuu." data-en="Deploying reliable municipal networks, hardware maintenance, and technical assistance across city offices.">
+                        በከተማዋ አስተዳደር ስር ላሉ ተቋማት የኔትወርክ ዝርጋታ፣ የኮምፒውተር ጥገና እና የዲጂታል አሰራር ቴክኒካል ድጋፍ ማድረግ።
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS & ANNOUNCEMENTS SECTION -->
+    <section id="news" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4">
+                <div class="space-y-2">
+                    <span class="text-brand-700 font-bold text-xs uppercase tracking-wider bg-brand-100 px-3 py-1 rounded-full" data-am="ወቅታዊ መረጃዎች" data-gd="Odeeffannoo Wayitaawaa" data-en="Latest Updates">ወቅታዊ መረጃዎች</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900" data-am="አዳዲስ ዜናዎች እና ማስታወቂያዎች" data-gd="Oduu Haaraa fi Beeksisa" data-en="News & Announcements">አዳዲስ ዜናዎች እና ማስታወቂያዎች</h2>
+                </div>
+                <!-- Admin Control Buttons (Hidden until unlocked) -->
+                <div id="adminControls" class="hidden flex items-center gap-3">
+                    <button onclick="openAdminModal()" class="bg-brand-700 hover:bg-brand-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-2">
+                        <i class="fas fa-plus"></i>
+                        <span>አዲስ ዜና ይልቀቁ</span>
+                    </button>
+                    <button onclick="logoutAdmin()" class="bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-2">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>ውጣ (Logout)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- News Cards Grid -->
+            <div id="newsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- LEADERSHIP & DIRECTORATES DIRECTORY (Ready for Photo Filenames) -->
+    <section id="staff" class="py-20 px-4 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
+                <span class="text-brand-700 font-bold text-xs uppercase tracking-wider bg-brand-100 px-3 py-1 rounded-full" data-am="የመምሪያው አመራሮች" data-gd="Hoggantoota Damee" data-en="Leadership Team">የመምሪያው አመራሮች</span>
+                <h2 class="text-3xl font-extrabold text-slate-900" data-am="የመምሪያው ኃላፊና የስራ ክፍል አመራሮች" data-gd="Hogganaa Damee fi Qindeessitoota Hojii" data-en="Department Leadership & Coordinators">የመምሪያው ኃላፊና የስራ ክፍል አመራሮች</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- 1. Tsehay Bogale (1282.jpg) -->
+                <div class="bg-white rounded-3xl p-6 border-2 border-brand-200 shadow-sm text-center space-y-4">
+                    <div class="w-28 h-28 mx-auto rounded-2xl overflow-hidden border-2 border-brand-500 bg-slate-100">
+                        <img src="1282.jpg" alt="ወ/ሮ ፀኃይ ቦጋሌ" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/047857/ffffff?text=Tsehay'">
+                    </div>
+                    <div>
+                        <h3 class="font-extrabold text-slate-900 text-base" data-am="ወ/ሮ ፀኃይ ቦጋሌ" data-gd="Addee Tsahaay Bogaalee" data-en="Mrs. Tsehay Bogale">ወ/ሮ ፀኃይ ቦጋሌ</h3>
+                        <p class="text-xs font-bold text-brand-700 mt-1" data-am="የመምሪያው ኃላፊ" data-gd="Hogganaa Damee" data-en="Department Head">የመምሪያው ኃላፊ</p>
+                    </div>
+                </div>
+
+                <!-- 2. Zufanwork Bire (zufan.jpg) -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm text-center space-y-4">
+                    <div class="w-28 h-28 mx-auto rounded-2xl overflow-hidden border-2 border-brand-100 bg-slate-100">
+                        <img src="zufan.jpg" alt="ወ/ሮ ዙፋንወርቅ ብሬ" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/065f46/ffffff?text=Zufanwork'">
+                    </div>
+                    <div>
+                        <h3 class="font-extrabold text-slate-900 text-base" data-am="ወ/ሮ ዙፋንወርቅ ብሬ" data-gd="Addee Zufaanwarq Biree" data-en="Mrs. Zufanwork Bire">ወ/ሮ ዙፋንወርቅ ብሬ</h3>
+                        <p class="text-xs font-semibold text-slate-500 mt-1" data-am="የሰው ሀብት አስተዳደር ዳይሬክቶሬት" data-gd="Daayirektoreetii Bulchiinsa Humna Namaa" data-en="Human Resource Admin Directorate">የሰው ሀብት አስተዳደር ዳይሬክቶሬት</p>
+                    </div>
+                </div>
+
+                <!-- 3. Yamikelshen Kassa (yamikelshen.jpg) -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm text-center space-y-4">
+                    <div class="w-28 h-28 mx-auto rounded-2xl overflow-hidden border-2 border-brand-100 bg-slate-100">
+                        <img src="yamikelshen.jpg" alt="ወ/ሮ ያሚከልሽን ካሳ" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/065f46/ffffff?text=Yamikelshen'">
+                    </div>
+                    <div>
+                        <h3 class="font-extrabold text-slate-900 text-base" data-am="ወ/ሮ ያሚከልሽን ካሳ" data-gd="Addee Yaamikalshin Kaasaa" data-en="Mrs. Yamikelshen Kassa">ወ/ሮ ያሚከልሽን ካሳ</h3>
+                        <p class="text-xs font-semibold text-slate-500 mt-1" data-am="የልማት ዕቅድና በጀት ዝግጅት አ/ዳይሬክቶሬት" data-gd="Daayirektoreetii Qophii Karooraa fi Baajataa" data-en="Development Plan & Budget Directorate">የልማት ዕቅድና በጀት ዝግጅት አ/ዳይሬክቶሬት</p>
+                    </div>
+                </div>
+
+                <!-- 4. Shetaye Worku (shetaye.jpg) -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm text-center space-y-4">
+                    <div class="w-28 h-28 mx-auto rounded-2xl overflow-hidden border-2 border-brand-100 bg-slate-100">
+                        <img src="shetaye.jpg" alt="ወ/ሮ ሽታዬ ወርቁ" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/065f46/ffffff?text=Shetaye'">
+                    </div>
+                    <div>
+                        <h3 class="font-extrabold text-slate-900 text-base" data-am="ወ/ሮ ሽታዬ ወርቁ" data-gd="Addee Shitaayee Warquu" data-en="Mrs. Shetaye Worku">ወ/ሮ ሽታዬ ወርቁ</h3>
+                        <p class="text-xs font-semibold text-slate-500 mt-1" data-am="የሰርቪስ ማህበራዊ አገልግሎት አሰጣጥ" data-gd="Kenniinsa Tajaajila Hawaasummaa" data-en="Social Service Delivery">የሰርቪስ ማህበራዊ አገልግሎት አሰጣጥ</p>
+                    </div>
+                </div>
+
+                <!-- 5. Solomon Abera (solomon.jpg) -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm text-center space-y-4">
+                    <div class="w-28 h-28 mx-auto rounded-2xl overflow-hidden border-2 border-brand-100 bg-slate-100">
+                        <img src="solomon.jpg" alt="አቶ ሰለሞን አበራ" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/065f46/ffffff?text=Solomon'">
+                    </div>
+                    <div>
+                        <h3 class="font-extrabold text-slate-900 text-base" data-am="አቶ ሰለሞን አበራ" data-gd="Obbo Salomoon Abarraa" data-en="Mr. Solomon Abera">አቶ ሰለሞን አበራ</h3>
+                        <p class="text-xs font-semibold text-slate-500 mt-1" data-am="የስነ ምግባር መከታተያ ክፍል" data-gd="Kutaa Hordoffii Naamusaa" data-en="Ethics & Anti-Corruption Unit">የስነ ምግባር መከታተያ ክፍል</p>
+                    </div>
+                </div>
+
+                <!-- 6. Muluqen Kebede (muluqen.jpg) -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm text-center space-y-4">
+                    <div class="w-28 h-28 mx-auto rounded-2xl overflow-hidden border-2 border-brand-100 bg-slate-100">
+                        <img src="muluqen.jpg" alt="አቶ ሙሉቀን ከበደ" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/065f46/ffffff?text=Muluqen'">
+                    </div>
+                    <div>
+                        <h3 class="font-extrabold text-slate-900 text-base" data-am="አቶ ሙሉቀን ከበደ" data-gd="Obbo Muluqan Kabbadaa" data-en="Mr. Muluqen Kebede">አቶ ሙሉቀን ከበደ</h3>
+                        <p class="text-xs font-semibold text-slate-500 mt-1" data-am="የሶፍትዌር ድረ-ገጽ ልማት አስተዳደር ዳይሬክቶሬት" data-gd="Daayirektoreetii Misoomaa fi Bulchiinsa Sooftiweerii" data-en="Software & Web Development Directorate">የሶፍትዌር ድረ-ገጽ ልማት አስተዳደር ዳይሬክቶሬት</p>
+                    </div>
+                </div>
+
+                <!-- 7. Amanuel Samuel (405.jpg) -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm text-center space-y-4">
+                    <div class="w-28 h-28 mx-auto rounded-2xl overflow-hidden border-2 border-brand-100 bg-slate-100">
+                        <img src="405.jpg" alt="አቶ አማኑኤል ሳሙኤል" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/047857/ffffff?text=Amanuel'">
+                    </div>
+                    <div>
+                        <h3 class="font-extrabold text-slate-900 text-base" data-am="አቶ አማኑኤል ሳሙኤል" data-gd="Obbo Amaanu'eel Saamu'eel" data-en="Mr. Amanuel Samuel">አቶ አማኑኤል ሳሙኤል</h3>
+                        <p class="text-xs font-semibold text-slate-500 mt-1" data-am="የአይቲ መሰረት ልማት ፕሮጀክት አስተዳደር ዳይሬክቶሬት" data-gd="Daayirektoreetii Bulchiinsa Pirojektii Bu'uuraalee IT" data-en="IT Infrastructure Project Admin Directorate">የአይቲ መሰረት ልማት ፕሮጀክት አስተዳደር ዳይሬክቶሬት</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & MAP SECTION -->
+    <section id="contact" class="py-20 px-4 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Info & Map -->
+            <div class="lg:col-span-6 space-y-6">
+                <div>
+                    <span class="text-brand-700 font-bold text-xs uppercase tracking-wider bg-brand-100 px-3 py-1 rounded-full" data-am="ያግኙን" data-gd="Nu Quunnamaa" data-en="Contact Us">ያግኙን</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-3" data-am="የመምሪያው አድራሻና መገናኛዎች" data-gd="Teessoo fi Karaalee Quunnamtii Damee" data-en="Office Address & Direct Channels">የመምሪያው አድራሻና መገናኛዎች</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                        <div class="w-11 h-11 bg-brand-100 text-brand-700 rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-900" data-am="አድራሻ" data-gd="Teessoo" data-en="Location">አድራሻ</h4>
+                            <p class="text-xs text-slate-600 mt-0.5" data-am="ዲላ ከተማ አስተዳደር ህንፃ፣ ዲላ፣ ደቡብ ኢትዮጵያ ክልል" data-gd="Gamoo Bulchiinsa Magaalaa Diillaa, Diillaa, Naannoo Itoophiyaa Kibbaa" data-en="Dilla City Administration Building, Dilla, South Ethiopia Region">ዲላ ከተማ አስተዳደር ህንፃ፣ ዲላ፣ ደቡብ ኢትዮጵያ ክልል</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                            <div class="w-11 h-11 bg-brand-100 text-brand-700 rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900" data-am="ስልክ" data-gd="Bilbila" data-en="Phone">ስልክ</h4>
+                                <p class="text-xs text-slate-600 mt-0.5" dir="ltr">+251 948 497 076</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                            <div class="w-11 h-11 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fab fa-telegram"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900" data-am="ቴሌግራም" data-gd="Teelegiraamii" data-en="Telegram">ቴሌግራም</h4>
+                                <a href="https://t.me/dtasit2024" target="_blank" rel="noopener noreferrer" class="text-xs text-sky-600 hover:underline font-semibold mt-0.5 block">@dtasit2024</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map -->
+                <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-sm h-64 bg-slate-100">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31719.24234121327!2d38.2896215!3d6.4063409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b09f5e6e8f2a5b%3A0x6a9a0b9c8d7e6f5a!2sDila%2C%20Ethiopia!5e0!3m2!1sen!2set!4v1700000000000!5m2!1sen!2set" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- WhatsApp Direct Form -->
+            <div class="lg:col-span-6">
+                <div class="bg-slate-50 p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm">
+                    <h3 class="text-2xl font-extrabold text-slate-900 mb-2" data-am="ቀጥታ መልዕክት ይላኩልን" data-gd="Ergaa Kallattiin Nuuf Ergaa" data-en="Send Us a Direct Message">ቀጥታ መልዕክት ይላኩልን</h3>
+                    <p class="text-xs text-slate-500 mb-6" data-am="ጥያቄዎን ወይም አስተያየትዎን ይጻፉ፤ በቀጥታ ወደ መምሪያው የዋትሳፕ መስመር (+251 948 497 076) ይላካል።" data-gd="Gaaffii yookiin yaada keessan barreessaa; kallattiin gara sarara WhatsApp damee keenyaatti (+251 948 497 076) ni ergama." data-en="Write your inquiry or feedback; it will be forwarded directly to our official WhatsApp line.">
+                        ጥያቄዎን ወይም አስተያየትዎን ይጻፉ፤ በቀጥታ ወደ መምሪያው የዋትሳፕ መስመር (+251 948 497 076) ይላካል።
+                    </p>
+
+                    <form onsubmit="sendWhatsAppMessage(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5" data-am="ሙሉ ስምዎ" data-gd="Maqaa Guutuu Keessan" data-en="Your Full Name">ሙሉ ስምዎ</label>
+                            <input type="text" id="senderName" required class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-600" placeholder="ለምሳሌ፡ አበበ ከበደ">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5" data-am="ስልክ ቁጥርዎ" data-gd="Lakkoofsa Bilbila Keessanii" data-en="Your Phone Number">ስልክ ቁጥርዎ</label>
+                            <input type="tel" id="senderPhone" required class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-600" placeholder="09...">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5" data-am="መልዕክትዎ" data-gd="Ergaa Keessan" data-en="Your Message">መልዕክትዎ</label>
+                            <textarea id="senderMsg" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-600" placeholder="መልዕክትዎን እዚህ ይጻፉ..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-3.5 rounded-xl shadow-md transition flex items-center justify-center gap-2 text-sm">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                            <span data-am="በዋትሳፕ መልዕክት ላክ" data-gd="WhatsApp'n Ergaa Ergi" data-en="Send via WhatsApp">በዋትሳፕ መልዕክት ላክ</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Triple-click copyright text to open hidden Admin login) -->
+    <footer class="bg-slate-950 text-slate-300 py-14 px-4 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="w-12 h-12 rounded-xl overflow-hidden bg-white p-1 flex-shrink-0">
+                    <img src="7253_2.png" alt="DCITD Logo" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/047857/ffffff?text=DCITD'">
+                </div>
+                <div>
+                    <h3 class="font-extrabold text-white text-sm sm:text-base" data-am="የዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ" data-gd="Bulchiinsa Magaalaa Diillaa Damee Kalaqaa fi Teeknooloojii" data-en="Dilla City Administration Innovation & Technology Dept.">የዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ</h3>
+                    <p class="text-xs text-slate-400">Dilla, South Ethiopia Region</p>
+                </div>
+            </div>
+
+            <div class="text-center md:text-left">
+                <p id="secretAdminTrigger" onclick="handleSecretClick()" class="text-xs text-slate-500 select-none cursor-default">
+                    &copy; 2026 DCITD Official Website. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- HIDDEN ADMIN LOGIN MODAL (Password: Dilla@info123) -->
+    <div id="loginModal" class="hidden fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-7 shadow-2xl border border-slate-200 space-y-5">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                <h3 class="font-extrabold text-slate-900 text-base flex items-center gap-2">
+                    <i class="fas fa-lock text-brand-700"></i>
+                    <span>የአስተዳዳሪ መግቢያ (Admin)</span>
+                </h3>
+                <button onclick="closeLoginModal()" class="text-slate-400 hover:text-slate-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form onsubmit="verifyAdminPassword(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1.5">የይለፍ ቃል (Password)</label>
+                    <input type="password" id="adminPasswordInput" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600" placeholder="••••••••••••">
+                    <p id="loginErrorMsg" class="hidden text-xs text-red-600 font-semibold mt-1.5">የተሳሳተ የይለፍ ቃል! እባክዎ እንደገና ይሞክሩ።</p>
+                </div>
+                <button type="submit" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-3 rounded-xl shadow transition text-sm">
+                    ግባ (Unlock Admin)
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN POST NEWS MODAL -->
+    <div id="adminPostModal" class="hidden fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-7 shadow-2xl border border-slate-200 space-y-5">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                <h3 class="font-extrabold text-slate-900 text-lg">አዲስ ዜና ወይም ማስታወቂያ ይልቀቁ</h3>
+                <button onclick="closeAdminModal()" class="text-slate-400 hover:text-slate-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form onsubmit="publishNewsPost(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">ርዕስ (Title)</label>
+                    <input type="text" id="postTitle" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm" placeholder="የዜናው ርዕስ...">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">ምድብ (Category)</label>
+                        <select id="postCategory" class="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-sm bg-white">
+                            <option value="ማስታወቂያ">ማስታወቂያ</option>
+                            <option value="ስልጠና">ስልጠና</option>
+                            <option value="ዜና">ዜና</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">የፎቶ ፋይል ስም (አማራጭ)</label>
+                        <input type="text" id="postImage" class="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-sm" placeholder="ለምሳሌ፡ 6470.jpg">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">ዝርዝር መረጃ (Content)</label>
+                    <textarea id="postBody" rows="4" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm" placeholder="ዝርዝር መረጃውን እዚህ ይጻፉ..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-3 rounded-xl shadow transition text-sm">
+                    ዜናውን አሁን ልቀቅ
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 1. Mobile Menu Toggle
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // 2. Hero Image Slider
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const heroSlider = document.getElementById('heroSlider');
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            heroSlider.style.transform = `translateX(${document.dir === 'rtl' ? '' : '-'}${currentSlide * 100}%)`;
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            heroSlider.style.transform = `translateX(${document.dir === 'rtl' ? '' : '-'}${currentSlide * 100}%)`;
+        }
+        setInterval(nextSlide, 5500);
+
+        // 3. Three-Language Switcher (Amharic, Gedeuffa, English)
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-am]').forEach(el => {
+                const translated = el.getAttribute(`data-${lang}`);
+                if (translated) {
+                    el.textContent = translated;
+                }
+            });
+        }
+
+        // 4. WhatsApp Direct Message Forwarding
+        function sendWhatsAppMessage(e) {
+            e.preventDefault();
+            const name = document.getElementById('senderName').value.trim();
+            const phone = document.getElementById('senderPhone').value.trim();
+            const msg = document.getElementById('senderMsg').value.trim();
+            const text = encodeURIComponent(`ሰላም DCITD!\nስም: ${name}\nስልክ: ${phone}\nመልዕክት: ${msg}`);
+            window.open(`https://wa.me/251948497076?text=${text}`, '_blank', 'noopener,noreferrer');
+        }
+
+        // 5. Hidden Admin Authentication (Password: Dilla@info123)
+        const ADMIN_PASS = "Dilla@info123";
+        let isAdminLoggedIn = sessionStorage.getItem('dcitd_admin') === 'true';
+        let secretClickCount = 0;
+        let secretClickTimer = null;
+
+        function handleSecretClick() {
+            secretClickCount++;
+            clearTimeout(secretClickTimer);
+            if (secretClickCount >= 3) {
+                secretClickCount = 0;
+                if (isAdminLoggedIn) {
+                    openAdminModal();
+                } else {
+                    document.getElementById('loginModal').classList.remove('hidden');
+                }
+            } else {
+                secretClickTimer = setTimeout(() => { secretClickCount = 0; }, 1000);
+            }
+        }
+
+        // Check URL parameter ?admin
+        if (window.location.search.includes('admin') && !isAdminLoggedIn) {
+            document.getElementById('loginModal').classList.remove('hidden');
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').classList.add('hidden');
+            document.getElementById('loginErrorMsg').classList.add('hidden');
+        }
+
+        function verifyAdminPassword(e) {
+            e.preventDefault();
+            const input = document.getElementById('adminPasswordInput').value;
+            if (input === ADMIN_PASS) {
+                isAdminLoggedIn = true;
+                sessionStorage.setItem('dcitd_admin', 'true');
+                closeLoginModal();
+                updateAdminUI();
+                openAdminModal();
+            } else {
+                document.getElementById('loginErrorMsg').classList.remove('hidden');
+            }
+        }
+
+        function logoutAdmin() {
+            isAdminLoggedIn = false;
+            sessionStorage.removeItem('dcitd_admin');
+            updateAdminUI();
+        }
+
+        function openAdminModal() {
+            document.getElementById('adminPostModal').classList.remove('hidden');
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminPostModal').classList.add('hidden');
+        }
+
+        function updateAdminUI() {
+            const controls = document.getElementById('adminControls');
+            if (isAdminLoggedIn) {
+                controls.classList.remove('hidden');
+            } else {
+                controls.classList.add('hidden');
+            }
+            renderNews();
+        }
+
+        // 6. News & Announcements Management
+        const defaultNews = [
+            {
+                id: 1,
+                title: "ለመንግስት ሰራተኞች የዲጂታል ክህሎት ስልጠና ተሰጠ",
+                category: "ስልጠና",
+                date: "2026",
+                image: "6470.jpg",
+                body: "የዲላ ከተማ አስተዳደር ፈጠራና ቴክኖሎጂ መምሪያ በተቋማት የሚሰጡ አገልግሎቶችን በዲጂታል ቴክኖሎጂ ለማዘመን የተግባር ስልጠና ሰጥቷል።"
+            },
+            {
+                id: 2,
+                title: "የከተማው ተቋማት የኔትወርክ መሠረተ ልማት ማሻሻያ ተጀመረ",
+                category: "ዜና",
+                date: "2026",
+                image: "7265.jpg",
+                body: "ቀልጣፋ የመረጃ ልውውጥ እንዲኖር በመንግስት መስሪያ ቤቶች የውስጥ ኔትወርክ ዝርጋታና ጥገና እየተከናወነ ይገኛል።"
+            }
+        ];
+
+        function getNewsList() {
+            try {
+                const saved = localStorage.getItem('dcitd_news_posts');
+                return saved ? JSON.parse(saved) : defaultNews;
+            } catch {
+                return defaultNews;
+            }
+        }
+
+        function publishNewsPost(e) {
+            e.preventDefault();
+            const title = document.getElementById('postTitle').value.trim();
+            const category = document.getElementById('postCategory').value;
+            const image = document.getElementById('postImage').value.trim() || "7262.jpg";
+            const body = document.getElementById('postBody').value.trim();
+
+            const list = getNewsList();
+            list.unshift({
+                id: Date.now(),
+                title,
+                category,
+                date: new Date().toLocaleDateString(),
+                image,
+                body
+            });
+            localStorage.setItem('dcitd_news_posts', JSON.stringify(list));
+            e.target.reset();
+            closeAdminModal();
+            renderNews();
+        }
+
+        function deleteNewsPost(id) {
+            const updated = getNewsList().filter(item => item.id !== id);
+            localStorage.setItem('dcitd_news_posts', JSON.stringify(updated));
+            renderNews();
+        }
+
+        function renderNews() {
+            const container = document.getElementById('newsContainer');
+            const list = getNewsList();
+            container.innerHTML = list.map(item => `
+                <article class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 bg-slate-200 overflow-hidden">
+                            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x350/047857/ffffff?text=DCITD+News'">
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="bg-brand-100 text-brand-800 font-bold px-3 py-1 rounded-full">${item.category}</span>
+                                <span class="text-slate-400">${item.date}</span>
+                            </div>
+                            <h3 class="font-extrabold text-slate-900 text-lg leading-snug">${item.title}</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">${item.body}</p>
+                        </div>
+                    </div>
+                    ${isAdminLoggedIn ? `
+                        <div class="px-6 pb-5 pt-2 border-t border-slate-200/70 flex justify-end">
+                            <button onclick="deleteNewsPost(${item.id})" class="text-red-600 hover:text-red-800 text-xs font-bold flex items-center gap-1">
+                                <i class="fas fa-trash"></i>
+                                <span>አጥፋ (Delete)</span>
+                            </button>
+                        </div>
+                    ` : ''}
+                </article>
+            `).join('');
+        }
+
+        // Initialize Page
+        updateAdminUI();
+    </script>
+</body>
+</html>
